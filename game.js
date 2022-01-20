@@ -14,7 +14,6 @@ let score = 0;
 let questionCount = 0;
 let availableQuestions = [];
 
-// START GAME
 const startGame = () => {
   // resetting game
   questionCount = 0;
@@ -24,7 +23,6 @@ const startGame = () => {
   getNewQuestion();
 };
 
-// GET A NEW QUESTION
 const getNewQuestion = () => {
   if (!availableQuestions.length || questionCount >= MAX_QUESTIONS) {
     // go to end page
@@ -59,7 +57,17 @@ $choicesEl.forEach((choice) => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
 
-    getNewQuestion();
+    let classToApply = 'incorrect';
+    if (selectedAnswer === currentQuestion.answer) {
+      classToApply = 'correct';
+    }
+
+    selectedChoice.parentElement.classList.add(classToApply);
+
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 500);
   });
 });
 
