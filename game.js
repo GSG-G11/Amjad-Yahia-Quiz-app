@@ -3,8 +3,9 @@ import questions from './questions.js';
 // ELEMENTS
 const $questionEl = document.getElementById('question');
 const $choicesEl = Array.from(document.querySelectorAll('.choice-text'));
-const $questionCounterEl = document.getElementById('questionCounter');
+const $questionCount = document.getElementById('questionCount');
 const $scoreText = document.getElementById('score');
+const $progressBarFull = document.getElementById('progressBarFull');
 
 //* CONSTANTS
 const CORRECT_BONUS = 10;
@@ -13,12 +14,12 @@ const MAX_QUESTIONS = 3;
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
-let questionCount = 0;
+let questionCounter = 0;
 let availableQuestions = [];
 
 const startGame = () => {
   // resetting game
-  questionCount = 0;
+  questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
 
@@ -26,13 +27,14 @@ const startGame = () => {
 };
 
 const getNewQuestion = () => {
-  if (!availableQuestions.length || questionCount >= MAX_QUESTIONS) {
+  if (!availableQuestions.length || questionCounter >= MAX_QUESTIONS) {
     // go to end page
     return window.location.assign('/end.html');
   }
 
-  questionCount++;
-  $questionCounterEl.innerText = `${questionCount}/${MAX_QUESTIONS}`;
+  questionCounter++;
+  $questionCount.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+  progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
   const randomQuestionIndex = Math.floor(
     Math.random() * availableQuestions.length
