@@ -9,7 +9,7 @@ const $progressBarFull = document.getElementById('progressBarFull');
 
 //* CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -22,11 +22,12 @@ const startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
-
   getNewQuestion();
 };
 
 const getNewQuestion = () => {
+  localStorage.setItem('mostRecentScore', score);
+
   if (!availableQuestions.length || questionCounter >= MAX_QUESTIONS) {
     // go to end page
     return window.location.assign('/end.html');
@@ -34,7 +35,7 @@ const getNewQuestion = () => {
 
   questionCounter++;
   $questionCount.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-  progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+  $progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
   const randomQuestionIndex = Math.floor(
     Math.random() * availableQuestions.length
