@@ -3,6 +3,8 @@ import questions from './questions.js';
 // ELEMENTS
 const $questionEl = document.getElementById('question');
 const $choicesEl = Array.from(document.querySelectorAll('.choice-text'));
+const $questionCounterEl = document.getElementById('questionCounter');
+const $scoreText = document.getElementById('score');
 
 //* CONSTANTS
 const CORRECT_BONUS = 10;
@@ -30,11 +32,11 @@ const getNewQuestion = () => {
   }
 
   questionCount++;
+  $questionCounterEl.innerText = `${questionCount}/${MAX_QUESTIONS}`;
 
   const randomQuestionIndex = Math.floor(
     Math.random() * availableQuestions.length
   );
-
   currentQuestion = availableQuestions[randomQuestionIndex];
   $questionEl.innerText = currentQuestion.question;
 
@@ -58,8 +60,15 @@ $choicesEl.forEach((choice) => {
     const selectedAnswer = selectedChoice.dataset['number'];
 
     let classToApply = 'incorrect';
+
+    // CHECK ANSWER
     if (selectedAnswer === currentQuestion.answer) {
       classToApply = 'correct';
+    }
+
+    // UPDATE SCORE
+    if (classToApply === 'correct') {
+      incrementScore(CORRECT_BONUS);
     }
 
     selectedChoice.parentElement.classList.add(classToApply);
@@ -71,4 +80,8 @@ $choicesEl.forEach((choice) => {
   });
 });
 
+const incrementScore = (number) => {
+  score += number;
+  $scoreText.innerText = score;
+};
 startGame();
