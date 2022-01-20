@@ -130,3 +130,12 @@ input {
 input::placeholder {
   color: #aaa;
 }
+
+#description {
+  font-size: 3rem;
+  padding: 1.5rem;
+  color: var(--main-color);
+  line-height: 5rem;
+  text-transform: capitalize;
+  margin-bottom: 4rem;
+}
