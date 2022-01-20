@@ -27,6 +27,8 @@ const startGame = () => {
 };
 
 const getNewQuestion = () => {
+  localStorage.setItem('mostRecentScore', score);
+
   if (!availableQuestions.length || questionCounter >= MAX_QUESTIONS) {
     // go to end page
     return window.location.assign('/end.html');
