@@ -1,7 +1,7 @@
 :root {
   background-color: #ecf5ff;
   font-size: 62.5%;
-  --main-color: #56a5eb;
+  --main-color: rgb(0, 153, 0);
 }
 
 * {
@@ -39,6 +39,12 @@ h2 {
 h3 {
   font-size: 2.8rem;
   font-weight: 500;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/back2.jpg');
+  background-size: cover;
 }
 
 /* Utils 
@@ -84,7 +90,8 @@ h3 {
 *******************/
 
 .btn {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  font-weight: bold;
   padding: 1rem 0;
   width: 20rem;
   text-align: center;
@@ -92,7 +99,9 @@ h3 {
   margin-bottom: 1rem;
   text-decoration: none;
   color: var(--main-color);
-  background-color: white;
+  background-color: transparent;
+  border: none;
+  color: var(--main-color);
 }
 
 .btn:hover {
@@ -100,6 +109,10 @@ h3 {
   box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
   transform: translateY(-0.1rem);
   transition: transform 150ms;
+  border-radius: 5px;
+  background-color: white;
+  color: var(--main-color);
+  transition: background 0.3s;
 }
 
 .btn[disabled]:hover {
@@ -134,8 +147,10 @@ input::placeholder {
 #description {
   font-size: 3rem;
   padding: 1.5rem;
-  color: var(--main-color);
+  color: rgb(79, 255, 102);
   line-height: 5rem;
   text-transform: capitalize;
   margin-bottom: 4rem;
+  letter-spacing: 2px;
+  color: white;
 }

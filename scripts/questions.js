@@ -1,6 +1,6 @@
 let questions = [
   {
-    question: 'The answer is really big? ',
+    question: 'The answer is really big ? ',
     choice1: 'THE ANSWER.',
     choice2: 'Really big',
     choice3: 'An elephant.',
@@ -19,7 +19,7 @@ let questions = [
     question: 'How cool is this quiz app',
     choice1: 'Amazing',
     choice2: 'vert bad',
-    choice3: 'ugly;',
+    choice3: 'ugly',
     choice4: 'Sucks',
     answer: '1',
   },
@@ -27,7 +27,7 @@ let questions = [
     question: 'what is the best app out there you can find online',
     choice1: 'Youtube',
     choice2: 'facebook',
-    choice3: 'instagram;',
+    choice3: 'instagram',
     choice4: 'this app',
     answer: '4',
   },

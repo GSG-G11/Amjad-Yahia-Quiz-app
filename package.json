@@ -7,10 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "parcel": "parcel watch",
+    "dev": "npx parcel",
     "build": "parcel build",
-    "test": "jest --watch",
-    "serve": "npx serve"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
