@@ -32,7 +32,7 @@ const startTimer = () => {
     }
 
     if (time === 0) {
-      window.location.assign('/end.html');
+      window.location.replace('/end.html');
     }
 
     $timer.innerText = `${time}s`;
@@ -40,11 +40,13 @@ const startTimer = () => {
 };
 
 const startGame = () => {
-  startTimer();
   // resetting game
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
+
+  startTimer();
+
   getNewQuestion();
 };
 
@@ -53,7 +55,7 @@ const getNewQuestion = () => {
 
   if (!availableQuestions.length || questionCounter >= MAX_QUESTIONS) {
     // go to end page
-    return window.location.assign('/end.html');
+    return window.location.replace('/end.html');
   }
 
   questionCounter++;
