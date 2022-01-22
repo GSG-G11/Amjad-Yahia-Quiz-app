@@ -1,12 +1,14 @@
 {
   "name": "amjad-yahia-quiz-app",
+  "source": "/index.html",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "parcel": "parcel watch",
+    "build": "parcel build",
     "test": "jest --watch",
     "serve": "npx serve"
   },
@@ -23,6 +25,6 @@
   "homepage": "https://github.com/amjed-98/Amjad-Yahia-Quiz-app#readme",
   "devDependencies": {
     "jest": "^27.4.7",
-    "serve": "^13.0.2"
+    "parcel": "^2.2.1"
   }
 }

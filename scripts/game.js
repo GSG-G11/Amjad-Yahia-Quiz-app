@@ -87,4 +87,5 @@ const incrementScore = (number) => {
   score += number;
   $scoreText.innerText = score;
 };
+
 startGame();
