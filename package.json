@@ -1,0 +1,28 @@
+{
+  "name": "amjad-yahia-quiz-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --watch",
+    "serve": "npx serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amjed-98/Amjad-Yahia-Quiz-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amjed-98/Amjad-Yahia-Quiz-app/issues"
+  },
+  "homepage": "https://github.com/amjed-98/Amjad-Yahia-Quiz-app#readme",
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "serve": "^13.0.2"
+  }
+}
