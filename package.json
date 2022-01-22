@@ -1,0 +1,29 @@
+{
+  "name": "amjad-yahia-quiz-app",
+  "source": "/index.html",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "npx parcel",
+    "build": "parcel build",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amjed-98/Amjad-Yahia-Quiz-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amjed-98/Amjad-Yahia-Quiz-app/issues"
+  },
+  "homepage": "https://github.com/amjed-98/Amjad-Yahia-Quiz-app#readme",
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "parcel": "^2.2.1"
+  }
+}

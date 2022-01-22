@@ -1,7 +1,12 @@
+body {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/back1.jpg');
+}
+
 .choice-container {
   display: flex;
   margin-bottom: 0.5rem;
-  width: 100%;
   font-size: 1.8rem;
   border: 0.1rem solid rgba(86, 168, 235, 0.25);
   background-color: white;
@@ -39,11 +44,17 @@
 #hud {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#timer {
+  text-align: center;
 }
 
 .hud-prefix {
   text-align: center;
   font-size: 2rem;
+  color: rgb(237, 243, 148);
 }
 
 .hud-title {
@@ -62,4 +73,9 @@
   background-color: var(--main-color);
   width: 0%;
   transition: width 0.4s;
+}
+
+#question {
+  font-size: 2.5rem;
+  color: #ffd95b;
 }

@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz-app - Play</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/game.css" />
   </head>
   <body>
     <div class="container">
       <div id="game" class="justify-center flex-column">
+        <h1 id="timer">60</h1>
+
         <div id="hud">
-          <div id="hud-item">
+          <div class="hud-item">
             <p id="questionCount" class="hud-prefix"></p>
 
             <div id="progressBar">
@@ -20,7 +22,7 @@
             </div>
           </div>
 
-          <div id="hud-item">
+          <div class="hud-item">
             <p class="hud-prefix">Score</p>
             <h1 id="score" class="hud-title">0</h1>
           </div>
@@ -50,7 +52,6 @@
       </div>
     </div>
 
-    <script type="module" src="game.js"></script>
-    <script type="module" src="questions.js"></script>
+    <script type="module" src="/scripts/game.js"></script>
   </body>
 </html>

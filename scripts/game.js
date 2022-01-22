@@ -6,6 +6,7 @@ const $choicesEl = Array.from(document.querySelectorAll('.choice-text'));
 const $questionCount = document.getElementById('questionCount');
 const $scoreText = document.getElementById('score');
 const $progressBarFull = document.getElementById('progressBarFull');
+const $timer = document.getElementById('timer');
 
 //* CONSTANTS
 const CORRECT_BONUS = 10;
@@ -16,12 +17,36 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let time = 60;
+
+const startTimer = () => {
+  setInterval(() => {
+    time -= 1;
+
+    if (time < 15) {
+      $timer.style.color = 'rgb(200, 119, 0)';
+    }
+
+    if (time < 7) {
+      $timer.style.color = 'red';
+    }
+
+    if (time === 0) {
+      window.location.replace('/end.html');
+    }
+
+    $timer.innerText = `${time}s`;
+  }, 1000);
+};
 
 const startGame = () => {
   // resetting game
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
+
+  startTimer();
+
   getNewQuestion();
 };
 
@@ -30,7 +55,7 @@ const getNewQuestion = () => {
 
   if (!availableQuestions.length || questionCounter >= MAX_QUESTIONS) {
     // go to end page
-    return window.location.assign('/end.html');
+    return window.location.replace('/end.html');
   }
 
   questionCounter++;
@@ -87,4 +112,5 @@ const incrementScore = (number) => {
   score += number;
   $scoreText.innerText = score;
 };
+
 startGame();
